@@ -71,7 +71,6 @@ public class Main {
             String personagem = sc.next();
             Personagem personagemObject = jangada.getLadoAtual().buscaPersonagem(personagem);
             if (personagemObject != null) {
-                System.out.println("To aqui e o meu lado é " + jangada.getLadoAtual().getPersonagens());
                 jangada.getNaJangada().add(personagemObject);
                 jangada.getLadoAtual().getPersonagens().remove(personagemObject);
             }
@@ -87,11 +86,8 @@ public class Main {
         } while (!jogar);
 
         try {
-            System.out.println("Vou tentar");
             jangada.atravessar();
-            System.out.println("consegui tentar");
             jangada.getLadoAtual().verificar();
-            System.out.println("Tentei man");
             outroLado.getPersonagens().addAll(jangada.getNaJangada());
             jangada.getNaJangada().removeAll(jangada.getNaJangada());
         } catch (Exception e) {
